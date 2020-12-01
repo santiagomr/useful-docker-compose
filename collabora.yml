@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+
+  collabora:
+
+    image: collabora/code
+
+    cap_add:
+     - MKNOD
+
+    ports:
+      - 9980:9980
+
+    environment:
+      - domain=mycode\\.example\\.com
+#      - username=admin
+#      - password=S3cRet
+#      - "extra_params=–o:ssl.enable=false -o:ssl.termination=false"
+
+    restart: unless-stopped
